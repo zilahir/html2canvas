@@ -33,6 +33,7 @@ import {contains} from './Util';
 import {parseBackground} from './parsing/background';
 import {parseBorder} from './parsing/border';
 import {parseBorderRadius} from './parsing/borderRadius';
+import {parseBoxShadow} from './parsing/boxShadow';
 import {parseDisplay, DISPLAY} from './parsing/display';
 import {parseCSSFloat, FLOAT} from './parsing/float';
 import {parseFont} from './parsing/font';
@@ -137,6 +138,7 @@ export default class NodeContainer {
                 IS_INPUT
                     ? getInputBorderRadius(node)
                     : parseBorderRadius(style),
+            boxShadow: parseBoxShadow(style.boxShadow),
             color: IS_INPUT ? INPUT_COLOR : new Color(style.color),
             display: display,
             float: parseCSSFloat(style.float),

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box-shadow</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../test.js"></script>
+    <style>
+        div {
+            display: inline-block;
+            padding: 25px;
+            margin: 40px;
+            background-color: #fff;
+        }
+        .div1 {
+            box-shadow: 10px 5px 5px red;
+        }
+        .div2 {
+            box-shadow: 60px -16px teal;
+        }
+        .div3 {
+            box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+        }
+        .div4 {
+            box-shadow: inset 5px 1px gold;
+        }
+        .div5 {
+            box-shadow: 3px 3px red, -1em 0 .4em olive;
+        }
+        body {
+            font-family: Arial;
+        }
+    </style>
+
+</head>
+<body>
+<div class="div1">box 1</div>
+<div class="div2">box 2</div>
+<div class="div3">box 3</div>
+<div class="div4">box 4</div>
+<div class="div5">box 5</div>
+</body>
+</html>
