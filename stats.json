@@ -1,0 +1,72 @@
+{
+  "assetsByChunkName": {
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-24e75f356e3b23858843.js",
+      "component---src-pages-index-js-24e75f356e3b23858843.js.map"
+    ],
+    "path---features": [
+      "path---features-62f3e5b10b83f0c37463.js",
+      "path---features-62f3e5b10b83f0c37463.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "path---configuration": [
+      "path---configuration-5d45603b9271e72f3739.js",
+      "path---configuration-5d45603b9271e72f3739.js.map"
+    ],
+    "path---faq": [
+      "path---faq-b09dedece9b55e5f2d99.js",
+      "path---faq-b09dedece9b55e5f2d99.js.map"
+    ],
+    "path---documentation": [
+      "path---documentation-4fd687b9f8b41b6c761f.js",
+      "path---documentation-4fd687b9f8b41b6c761f.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-9c93c7af308e1cdf09f2.js",
+      "component---src-layouts-index-js-9c93c7af308e1cdf09f2.js.map"
+    ],
+    "path---getting-started": [
+      "path---getting-started-dc03fe6e1bca4c6b6479.js",
+      "path---getting-started-dc03fe6e1bca4c6b6479.js.map"
+    ],
+    "path---index": [
+      "path---index-7d6b7b786504da546df3.js",
+      "path---index-7d6b7b786504da546df3.js.map"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js-86886b32c8930a3c8d08.js",
+      "component---src-pages-404-js-86886b32c8930a3c8d08.js.map"
+    ],
+    "commons": [
+      "commons-c7ad9dd754204761e4f6.js",
+      "build-js-styles.css",
+      "commons-c7ad9dd754204761e4f6.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---404-html": [
+      "path---404-html-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---proxy": [
+      "path---proxy-a6fb26451b41281ac890.js",
+      "path---proxy-a6fb26451b41281ac890.js.map"
+    ],
+    "app": [
+      "app-18b338dcad8ea538c305.js",
+      "build-js-styles.css",
+      "app-18b338dcad8ea538c305.js.map",
+      "build-js-styles.css.map"
+    ],
+    "component---src-templates-docs-js": [
+      "component---src-templates-docs-js-b44a1cb8c654e544656d.js",
+      "component---src-templates-docs-js-b44a1cb8c654e544656d.js.map"
+    ],
+    "path---404": [
+      "path---404-a0e39f21c11f6a62c5ab.js",
+      "path---404-a0e39f21c11f6a62c5ab.js.map"
+    ]
+  }
+}
