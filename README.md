@@ -1,6 +1,18 @@
 html2canvas
 ===========
 
+#This is a forked project of the originak `html2canvas` package. It was modified to be able to send `authToken` to the fetch method, which fetches the images being display on the page. 
+
+##Usage
+
+Just pass`authToken`, the option's `Object` as the following: 
+
+
+```
+const authToken = <...>
+{... authToken: authToken }
+```
+
 [Homepage](https://html2canvas.hertzen.com) | [Downloads](https://github.com/niklasvh/html2canvas/releases) | [Questions](http://stackoverflow.com/questions/tagged/html2canvas?sort=newest) | [Donate](https://www.gittip.com/niklasvh/)
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/niklasvh/html2canvas?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) 
