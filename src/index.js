@@ -29,7 +29,8 @@ export type Options = {
     scrollX: number,
     scrollY: number,
     windowWidth: number,
-    windowHeight: number
+    windowHeight: number,
+    authToken: string
 };
 
 const html2canvas = (element: HTMLElement, conf: ?Options): Promise<*> => {
@@ -64,11 +65,11 @@ const html2canvas = (element: HTMLElement, conf: ?Options): Promise<*> => {
         windowWidth: defaultView.innerWidth,
         windowHeight: defaultView.innerHeight,
         scrollX: defaultView.pageXOffset,
-        scrollY: defaultView.pageYOffset
+        scrollY: defaultView.pageYOffset,
+        authToken: ''
     };
 
     const result = renderElement(element, {...defaultOptions, ...config}, logger);
-
     if (__DEV__) {
         return result.catch(e => {
             logger.error(e);

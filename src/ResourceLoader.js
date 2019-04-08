@@ -1,7 +1,7 @@
 /* @flow */
 'use strict';
 
-import type Options from './index';
+import type Options from './i ndex';
 import type Logger from './Logger';
 
 export type ImageElement = Image | HTMLCanvasElement;
@@ -30,6 +30,7 @@ export default class ResourceLoader {
     }
 
     loadImage(src: string): ?string {
+        this.logger.log('loading image', src);
         if (this.hasResourceInCache(src)) {
             return src;
         }
@@ -48,7 +49,7 @@ export default class ResourceLoader {
                     );
                     return src;
                 } else if (this.options.useCORS === true && FEATURES.SUPPORT_CORS_IMAGES) {
-                    return this.addImage(src, src, true);
+                    return this.xhrImage(src, src, true);
                 }
             }
         }
@@ -66,7 +67,6 @@ export default class ResourceLoader {
                 loadImage(src, this.options.imageTimeout || 0)
             ));
         }
-
         return this.xhrImage(src);
     }
 
@@ -108,9 +108,13 @@ export default class ResourceLoader {
                     );
             }
             xhr.open('GET', src, true);
+            if (this.options.authToken) {
+                this.logger.log(`AuthTokern ${this.options.authToken}`);
+                xhr.setRequestHeader('Authorization', 'Bearer ' + this.options.authToken);
+            }
             xhr.send();
         }).then(src => loadImage(src, this.options.imageTimeout || 0));
-
+        this.logger.log(`SRC ${src}`);
         return this.cache[src];
     }
 
@@ -233,6 +237,7 @@ const loadImage = (src: string, timeout: number): Promise<Image> => {
         if (img.complete === true) {
             // Inline XML images may fail to parse, throwing an Error later on
             setTimeout(() => {
+                this.logger.log(`resolve img ${img}`);
                 resolve(img);
             }, 500);
         }
