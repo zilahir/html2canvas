@@ -1,11 +1,11 @@
 {
   "title": "html2canvas",
-  "name": "html2canvas",
+  "name": "@zilahir/html2canvas",
   "description": "Screenshots with JavaScript",
   "main": "dist/npm/index.js",
   "module": "dist/html2canvas.js",
   "browser": "dist/html2canvas.js",
-  "version": "1.0.0-alpha.12",
+  "version": "1.0.0-alpha.13",
   "author": {
     "name": "Niklas von Hertzen",
     "email": "niklasvh@gmail.com",
