@@ -42,6 +42,7 @@ export default class CanvasRenderer implements RenderTarget<HTMLCanvasElement> {
     render(options: RenderOptions) {
         this.ctx = this.canvas.getContext('2d');
         this.options = options;
+        this.options.scale = 2;
         this.canvas.width = Math.floor(options.width * options.scale);
         this.canvas.height = Math.floor(options.height * options.scale);
         this.canvas.style.width = `${options.width}px`;
@@ -50,6 +51,7 @@ export default class CanvasRenderer implements RenderTarget<HTMLCanvasElement> {
         this.ctx.scale(this.options.scale, this.options.scale);
         this.ctx.translate(-options.x, -options.y);
         this.ctx.textBaseline = 'bottom';
+        options.logger.log(`scale: ${this.options.scale}`);
         options.logger.log(
             `Canvas renderer initialized (${options.width}x${options.height} at ${options.x},${options.y}) with scale ${this
                 .options.scale}`
@@ -73,17 +75,31 @@ export default class CanvasRenderer implements RenderTarget<HTMLCanvasElement> {
     }
 
     drawImage(image: ImageElement, source: Bounds, destination: Bounds) {
-        this.ctx.drawImage(
-            image,
-            source.left,
-            source.top,
-            source.width,
-            source.height,
-            destination.left,
-            destination.top,
-            destination.width,
-            destination.height
-        );
+        /**START CUSTOM CODE**/
+        options.logger.log('THIS IS THE MODIFIED DRAWIMAGE FUNCTION');
+        var newWidth = 30;
+        var newHeight = 30;
+        var newX = destination.left;
+        var newY = destination.top;
+
+        // console.log(image, source, destination);
+        if (source.width/destination.width > source.height/destination.height) {
+            newWidth = destination.width;
+            newHeight = source.height * (destination.width / source.width);
+            newY = destination.top + (destination.height - newHeight) / 2;
+        } else {
+            newWidth = source.width * (destination.height / source.height);
+            newHeight = destination.height;
+            newX = destination.left + (destination.width - newWidth) / 2;
+        }
+      // console.log(newWidth, newHeight);
+
+        this.ctx.drawImage(image, source.left, source.top, source.width, source.height,
+          newX, newY,
+          newWidth, newHeight);
+        // destination.width,
+        // destination.height * (source.height / source.width)
+        //   destination.width, destination.height);
     }
 
     drawShape(path: Path, color: Color) {

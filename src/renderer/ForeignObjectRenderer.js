@@ -10,6 +10,7 @@ export default class ForeignObjectRenderer {
 
     render(options) {
         this.options = options;
+        options.logger.log(`options: ${this.options}`);
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext('2d');
         this.canvas.width = Math.floor(options.width) * options.scale;
@@ -18,7 +19,7 @@ export default class ForeignObjectRenderer {
         this.canvas.style.height = Math.floor(options.height) * options.scale;
 
         options.logger.log(
-            `ForeignObject renderer initialized (${options.width}x${options.height} at ${options.x},${options.y}) with scale ${options.scale}`
+            `ForeignObject renderer initialized (${options.width}x${options.height} at ${options.x},${options.y}) with scale ${options.scale} modified`
         );
         const svg = createForeignObjectSVG(
             Math.max(options.windowWidth, options.width) * options.scale,
